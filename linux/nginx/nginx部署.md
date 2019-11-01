@@ -81,7 +81,7 @@ yum install -y openssl openssl-devel
 
 #### 1、把安装包通过sftp上传到服务器
 
-![1572590074246](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590074246.png)
+![Image text](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590074246.png)
 
 #### 2、 解压
 
