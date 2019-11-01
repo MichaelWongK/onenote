@@ -1,5 +1,4 @@
 # Linux系统下安装nginx
-![img](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/20190316103605490.png)
 
 ## 前言：
 
@@ -32,7 +31,7 @@ yum方法安装的，可以用 yum list installed 查找，如果是查找指定
 
 运行结果如下图：
 
-![img](https://img-blog.csdnimg.cn/20190315224710236.png)
+![img](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/20190315224710236.png)
 
 如果没有安装的话，就先安装一下。
 
@@ -81,7 +80,7 @@ yum install -y openssl openssl-devel
 
 #### 1、把安装包通过sftp上传到服务器
 
-![Image text](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590074246.png)
+![1572590074246](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590074246.png)
 
 #### 2、 解压
 
@@ -126,13 +125,13 @@ make install
 
 你在指定的文件夹里的找到了生成的conf和sbin文件，就说明基本安装成功。（_temp是启动后生成的文件）
 
-![1572590521561](C:\Users\User\AppData\Roaming\Typora\typora-user-images\1572590521561.png)
+![1572590521561](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590521561.png)
 
 #### 7、修改配置文件
 
 然后进到conf里改下配置文件nginx.conf，如果你有root权限，端口可以设置成80（nginx默认端口号），但是如果你没有root权限建议把端口改成，1024以上的端口，比如9090。（在Linux下，默认端口号在1024以下的程序是要在root下才能使用的，在其他用户下，如果尝试使用将会报错）
 
-![img](https://img-blog.csdnimg.cn/20190316103605490.png)
+![img](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/20190316103605490.png)
 
 指令：
 
@@ -165,13 +164,13 @@ ps -ef|grep nginx
 
 出现如下图的，就证明启动成功啦！
 
-![1572590180943](C:\Users\User\AppData\Roaming\Typora\typora-user-images\1572590180943.png)
+![1572590180943](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590180943.png)
 
 #### 10、查看主页
 
 想要本地看到nginx的主页，需要让运维映射下外网ip和端口或者配一下windows下的跳板机（一般情况下，工作中的服务器是内网地址，无法直接访问，所以要做下映射），这样就可以通过浏览器访问nginx的主页。
 
-![1572590267570](C:\Users\User\AppData\Roaming\Typora\typora-user-images\1572590267570.png)
+![1572590267570](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/1572590267570.png)
 
 参考文章：
 
@@ -185,7 +184,7 @@ https://www.cnblogs.com/yuanqiangfei/p/8033000.html
 
 一、如果出现下面的问题，就是说相应的安装包缺失，用yum安装相应的包就行。
 
-![img](https://img-blog.csdnimg.cn/20190316105450546.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pka193YW5ndGFpZGE=,size_16,color_FFFFFF,t_70)
+![img](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pka193YW5ndGFpZGE=,size_16,color_FFFFFF,t_70)
 
 这里缺失的是pcre-devel
 
