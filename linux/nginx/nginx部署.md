@@ -1,4 +1,5 @@
 # Linux系统下安装nginx
+https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/20190316103605490.png
 
 ## 前言：
 
