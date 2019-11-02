@@ -2,21 +2,15 @@
 
 ​        Nginx (发音为[engine x])专为性能优化而开发，其最知名的优点是它的稳定性和低系统资源消耗，以及对并发连接的高处理能力(单台物理服务器可支持30000～50000个并发连接)， 是一个高性能的 HTTP 和反向代理服务器，也是一个IMAP/POP3/SMTP 代理服。
 
-
-
 ## 二.nginx基本配置与参数说明
 
 \#运行用户
-
-
 
 ```undefined
 user nobody;
 ```
 
 \#启动进程,通常设置成和cpu的数量相等
-
-
 
 ```undefined
 worker_processes  1;
@@ -36,19 +30,13 @@ worker_processes  1;
 
 events {
 
-
-
 ​    \#仅用于linux2.6以上内核,可以大大提高nginx的性能  
-
-
 
 ```php
 use   epoll;
 ```
 
-​    \#**单个后台worker process进程**最大并发链接数  
-
-
+​    \#单个后台worker process进程最大并发链接数  
 
 ```undefined
 worker_connections  1024;
@@ -56,47 +44,25 @@ worker_connections  1024;
 
 ​    \# 并发总数是 worker_processes 和 worker_connections 的乘积
 
-
-
 ​    \# 在设置了反向代理的情况下，max_clients = worker_processes * worker_connections / 4  为什么
-
-
 
 ​    \# 根据以上条件，正常情况下的Nginx Server可以应付的最大连接数为：4 * 8000 = 32000
 
-
-
 ​    \# 因为并发受IO约束，max_clients的值须小于系统可以打开的最大文件数
-
-
 
 ​    \# 我们来看看360M内存的VPS可以打开的文件句柄数是多少：
 
-
-
 ​    \# 输出 34336
-
-
 
 ​    \# 所以，worker_connections 的值需根据 worker_processes 进程数目和系统可以打开的最大文件总数进行适当地进行设置
 
-
-
 ​    \# 其实质也就是根据主机的物理CPU和内存进行配置
-
-
 
 ​    \# ulimit -SHn 65535
 
+​	#设定http服务器
 
-
-\#设定http服务器
-
-
-
-​    \#**设定mime类型,类型由mime.type文件定义**   
-
-
+​    \#设定mime类型,类型由mime.type文件定义   
 
 ```php
 include    mime.types;
@@ -105,8 +71,6 @@ default_type  application/octet-stream;
 ```
 
 ​    \#**设定日志格式**
-
-
 
 ```swift
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
@@ -118,13 +82,7 @@ access_log  logs/access.log  main;
 
 ​    \#sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，
 
-
-
 ​    \#如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，
-
-
-
-
 
 ```vbscript
 sendfile     on;
@@ -133,10 +91,6 @@ sendfile     on;
 ​    \#tcp_nopush     on;
 
 ​    \#连接超时时间
-
-
-
-
 
 ```vbscript
 keepalive_timeout  65;
@@ -158,8 +112,6 @@ fastcgi_temp_file_write_size 128k;
 
 ​      \#upstream的负载均衡，（以权重方式分发），weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。
 
-
-
 ```vbscript
 upstream blog.nginx.com {
     server 192.168.80.121:80 weight=3;
@@ -180,16 +132,12 @@ upstream blog.nginx.com {
 
 ​    \#开启gzip压缩   
 
-
-
 ```vbscript
 gzip  on;
 gzip_disable "MSIE [1-6].";
 ```
 
 ​    \#设定请求缓冲   
-
-
 
 ```undefined
 client_header_buffer_size    128k;
@@ -198,11 +146,7 @@ large_client_header_buffers  4 128k;
 
 ​    \#设定虚拟主机配置
 
-
-
 ​        \#**侦听80端口**    
-
-
 
 ```perl
 listen    80;
@@ -210,15 +154,11 @@ listen    80;
 
 ​        \#定义访问地址，域名可以有多个，用空格隔开      
 
-
-
 ```css
 server_name www.nginx.cn nginx.cn ;
 ```
 
 ​        \#定义服务器的默认网站根目录位置  
-
-
 
 ```undefined
 root html;
@@ -226,15 +166,11 @@ root html;
 
 ​        \#设定本虚拟主机的访问日志    
 
-
-
 ```vbscript
 access_log  logs/nginx.access.log  main; 
 ```
 
 ​        \#默认请求       
-
-
 
 ```perl
 location / {            
@@ -247,7 +183,7 @@ location / {
 
 ```php
 location / {
-    proxy_pass http://127.0.0.1:88;
+    proxy_pass http://127.0.0.1:80;
     proxy_redirect off;
     proxy_set_header X-Real-IP $remote_addr;
     #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
@@ -269,8 +205,6 @@ location / {
 
 ​       \#设定查看Nginx状态的地址
 
-
-
 ```cs
 location /NginxStatus {
     stub_status on;
@@ -284,8 +218,6 @@ location /NginxStatus {
 ​       \#本地动静分离反向代理配置
 
 ​        \#所有jsp的页面均交由tomcat或resin处理
-
-
 
 ```php
 location ~ .(jsp|jspx|do)?$ {
@@ -333,8 +265,6 @@ location ~ ^/(images|javascript|js|css|flash|media|static)/ {
 ```
 
 ​        \#PHP 脚本请求全部转发到 FastCGI处理. 使用FastCGI默认配置. 
-
-
 
 ```ruby
 location ~ .php$ {
@@ -428,17 +358,9 @@ http {
 
 ## 三.nginx配置超时时间
 
-​      http://my.oschina.net/xsh1208/blog/199674 
-
- 
-
-
+http://my.oschina.net/xsh1208/blog/199674 
 
 Nginx中upstream有以下几种方式：
-
-
-
-
 
 ```vbscript
 upstream bakend {
@@ -465,8 +387,6 @@ upstream bakend {
 每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session不能跨服务器的问题。 
 如果后端服务器down掉，要手工down掉。
 
-
-
 ```vbscript
 upstream resinserver{
     ip_hash;
@@ -477,8 +397,6 @@ upstream resinserver{
 
 4、fair（第三方插件） 
 按后端服务器的响应时间来分配请求，响应时间短的优先分配。
-
-
 
 ```vbscript
 upstream resinserver{
@@ -491,8 +409,6 @@ upstream resinserver{
 5、url_hash（第三方插件） 
  按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，后端服务器为缓存服务器时比较有效。 
  在upstream中加入hash语句，hash_method是使用的hash算法
-
-
 
 ```vbscript
 upstream resinserver{
@@ -509,12 +425,6 @@ upstream resinserver{
 3.max_fails 允许请求失败的次数默认为1。当超过最大次数时，返回proxy_next_upstream 模块定义的错误 
 4.fail_timeout max_fails次失败后，暂停的时间。 
 5.backup 备用服务器, 其它所有的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。
-
- 
-
-
-
-
 
 ```perl
 <span style="font-size:14px;">启动nginx:
