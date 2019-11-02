@@ -2,12 +2,12 @@
 
 ## 目录
 
-1. [查看磁盘使用情况 df、du](https://github.com/AmosWang0626/notes/blob/master/system/linux.md#查看磁盘使用情况)
-2. [查看系统信息 uname](https://github.com/AmosWang0626/notes/blob/master/system/linux.md#查看系统信息uname)
-3. [神器 lsof](https://github.com/AmosWang0626/notes/blob/master/system/linux.md#命令的使用lsof)
-4. [定时任务 corn](https://github.com/AmosWang0626/notes/blob/master/system/linux.md#定时任务cron)
-5. [连接工具 SecureCRT SecureFX](https://github.com/AmosWang0626/notes/blob/master/system/linux.md#Secure(CRT/FX)使用技巧)
-6. [Linux目录释义](https://github.com/AmosWang0626/notes/blob/master/system/linux.md#Linux目录释义)
+1. [查看磁盘使用情况 df、du](https://github.com/MichaelWongK/onenote/edit/master/linux/system/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md#查看磁盘使用情况)
+2. [查看系统信息 uname](https://github.com/MichaelWongK/onenote/edit/master/linux/system/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md#查看系统信息uname)
+3. [神器 lsof](https://github.com/MichaelWongK/onenote/edit/master/linux/system/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md#命令的使用lsof)
+4. [定时任务 corn](https://github.com/MichaelWongK/onenote/edit/master/linux/system/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md#定时任务cron)
+5. [连接工具 SecureCRT SecureFX](https://github.com/MichaelWongK/onenote/edit/master/linux/system/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md#Secure(CRT/FX)使用技巧)
+6. [Linux目录释义](https://github.com/MichaelWongK/onenote/edit/master/linux/system/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md#Linux目录释义)
 
 ```
 未整理内容：
