@@ -74,6 +74,66 @@ nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http�
 yum install -y openssl openssl-devel
 ```
 
+#### 补充：如果上面没有无法yum，那就外部下载zlib、pcre、openssl的依赖包再安装，如果yum成功，请跳过此步
+
+##### 1 安装 pcre（make的时候此需要root权限）
+
+　 下载pcre依赖包 http://ftp.pcre.org/pub/pcre/
+
+```
+cd /home/nginx/
+
+tar -zxvf pcre2-10.22.zip　　　
+
+cd pcre2-10.22
+
+./configure
+
+make
+
+make install　
+```
+
+　
+
+##### 2 安装openssl（make的时候此需要root权限）
+
+​	下载openssl依赖包 http://distfiles.macports.org/openssl/
+
+```
+cd /home/nginx/
+
+tar -zxvf openssl-1.0.1e.tar.gz
+
+cd openssl-1.0.1e
+
+./config
+
+make
+
+make install
+```
+
+##### 3 安装zlib（make的时候此需要root权限）
+
+　 下载zlib依赖包 http://www.zlib.net/fossils/
+
+　　　　　
+
+```
+cd /home/nginx/
+
+tar -zxvf zlib-1.2.11.tar.gz
+
+cd zlib-1.2.11
+
+CFLAGS="-O3 -fPIC" ./configure
+
+make
+
+make install
+```
+
 
 
 ### 二、准备好上面的依赖环境就可以正式安装啦
