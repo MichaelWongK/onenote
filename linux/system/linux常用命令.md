@@ -1,14 +1,5 @@
 # Linux
 
-## 目录
-
-1. [查看磁盘使用情况 df、du](https://github.com/MichaelWongK/onenote/blob/master/linux/system/linux常用命令.md#查看磁盘使用情况)
-2. [查看系统信息 uname](https://github.com/MichaelWongK/onenote/blob/master/linux/system/linux常用命令.md#查看系统信息uname)
-3. [神器 lsof](https://github.com/MichaelWongK/onenote/blob/master/linux/system/linux常用命令.md#命令的使用lsof)
-4. [定时任务 corn](https://github.com/MichaelWongK/onenote/blob/master/linux/system/linux常用命令.md#定时任务cron)
-5. [连接工具 SecureCRT SecureFX](https://github.com/MichaelWongK/onenote/blob/master/linux/system/linux常用命令.md#Secure(CRT/FX)使用技巧)
-6. [Linux目录释义](https://github.com/MichaelWongK/onenote/blob/master/linux/system/linux常用命令.md#Linux目录释义)
-
 ```
 未整理内容：
 修改服务器时间：`date -s "2019/10/31 23:57:00"`
