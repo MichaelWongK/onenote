@@ -1,3 +1,5 @@
+## location优先级
+
 ### location表达式类型
 
 - ~ 表示执行一个正则匹配，区分大小写
@@ -75,8 +77,6 @@
 注意，以上的匹配和在配置文件中定义的顺序无关。
 
 
-
-原文：http://seanlook.com/2015/05/17/nginx-location-rewrite/作者： sean
 
 
 
