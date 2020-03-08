@@ -1,6 +1,6 @@
 1.Java Thread.start() 如何调用 run() 方法的
 
-![](C:\Users\Administrator\Desktop\面试\Java多线程\threadstart.jpg)
+![](threadstart.jpg)
 
 
 
