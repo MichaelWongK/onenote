@@ -1,10 +1,10 @@
-![image-20200311164535507](..\JVM\DispatcherServlet.png)
+![image-20200311164535507](../file/DispatcherServlet.png)
 
-![image-20200311232817246](..\JVM\image-20200311232817246.png)
+![image-20200311232817246](../file/image-20200311232817246.png)
 
-![image-20200311233013148](..\JVM\image-20200311233013148.png)
+![image-20200311233013148](../file/image-20200311233013148.png)
 
-![image-20200311233131163](..\JVM\image-20200311233131163.png)
+![image-20200311233131163](../file/image-20200311233131163.png)
 
 ## 1、什么是 SpringMvc？
 
