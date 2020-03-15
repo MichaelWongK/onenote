@@ -1,3 +1,5 @@
+![image-20200315234330619](D:\workspace\git\onenote\Interview Prep\file\MVC图.png)
+
 ![image-20200311164535507](../file/DispatcherServlet.png)
 
 ![image-20200311232817246](../file/image-20200311232817246.png)
@@ -140,3 +142,7 @@ SpringMvc 是 spring 的一个模块，基于 MVC 的一个框架，无需中间
 ## 22、讲下 SpringMvc 的执行流程
 
 > 系统启动的时候根据配置文件创建 spring 的容器, 首先是发送 http 请求到核心控制器disPatherServlet， spring 容器通过映射器去寻找业务控制器，使用适配器找到相应的业务类，在进业务类时进行数据封装，在封装前可能会涉及到类型转换，执行完业务类后使用ModelAndView 进行视图转发，数据放在 model 中，用 map 传递数据进行页面显  
+
+## 23、SpringMVC常用注解
+
+![image-20200315234718524](D:\workspace\git\onenote\Interview Prep\file\SpringMVC常用注解.png)
