@@ -31,7 +31,7 @@ yum方法安装的，可以用 yum list installed 查找，如果是查找指定
 
 运行结果如下图：
 
-![img](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/20190315224710236.png)
+![img](images/20190315224710236.png)
 
 如果没有安装的话，就先安装一下。
 
@@ -191,7 +191,7 @@ make install
 
 然后进到conf里改下配置文件nginx.conf，如果你有root权限，端口可以设置成80（nginx默认端口号），但是如果你没有root权限建议把端口改成，1024以上的端口，比如9090。（在Linux下，默认端口号在1024以下的程序是要在root下才能使用的，在其他用户下，如果尝试使用将会报错）
 
-![img](https://github.com/MichaelWongK/onenote/blob/master/linux/nginx/images/20190316103605490.png)
+![img](images/20190316103605490.png)
 
 指令：
 
