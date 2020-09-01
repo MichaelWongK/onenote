@@ -84,3 +84,8 @@ mysql> select host, user from user;//查看权限
 mysql> flush privileges; // 刷新配置
 ```
 
+方式二：创建新用户，采用naviat_password 连接方式。赋予新用户root管理员的全部权限。
+
+CREATE USER 'finley'@'%' IDENTIFIED BY 'password';
+
+GRANT ALL PRIVILEGES ON *.* TO 'finley'@'%' WITH GRANT OPTION;
