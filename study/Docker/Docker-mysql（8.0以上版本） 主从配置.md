@@ -234,8 +234,8 @@ master_host='172.17.2.2',
 master_port=3306,
 master_user='slave',
 master_password='123456',
-master_log_file='binlog.000003',
-master_log_pos=892,
+master_log_file='binlog.000004',
+master_log_pos=24474,
 get_master_public_key=1;
 ```
 
