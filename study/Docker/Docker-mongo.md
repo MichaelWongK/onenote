@@ -37,7 +37,9 @@ docker exec -it mongodb-server mongo admin
 ```shell
 db.createUser({ user: 'micheal', pwd: 'mingkai13', roles: [{role: "userAdminAnyDatabase", db: "admin"}]});
 
+use storage
 db.createUser({ user: 'micheal.wang', pwd: 'mingkai13', roles: [{role: "readWrite", db: "storage"}]});
+// 需要切换对应db再创建user
 ```
 
 <img src="D:/workspace/git/onenote/imageFiles/image-20200730204642242.png" alt="image-20200730204642242" style="zoom: 55%;" />
@@ -207,19 +209,60 @@ docker run --name mongodb-server0 \
 
 
 
+## MongoDB数据备份及还原
 
+### 连接到宿主机
 
+```
+docker exec -it mongodb-server /bin/bash
+```
 
+### 使用mongodump进行数据库备份
 
+**容器中执行**
 
+```
+mongodump -h 127.0.0.1 --port 27017 -u micheal.wang -p mingkai13 -d storage -o /data
+```
 
+| 参数   | 作用               |
+| ------ | ------------------ |
+| -h     | host               |
+| --port | 端口               |
+| -d     | 指定数据库         |
+| -o     | 指定备份到具体目录 |
+| -u     | 用户名             |
+| -p     | 密码               |
 
+### 压缩备份文件夹
 
+```
+tar -zcvf storage.tar.gz storage/
+```
 
+### 将备份文件从容器中导出到宿主机
 
+```
+docker cp mongodb-server:/data/storage.tar.gz /data
+```
 
+### 解压文件
 
+```
+tar -zxvf  storage.tar.gz 
+```
 
+### 将文件从宿主机导入新的容器
+
+```
+docker cp storage/ c9f9be23f50b:/data/dump/storage
+```
+
+### 使用mongorestore进行数据还原
+
+```
+mongorestore -h 127.0.0.1:27017 -u micheal.wang -p mingkai13 -d storage /data/dump/storage/
+```
 
 
 
