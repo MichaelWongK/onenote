@@ -23,7 +23,7 @@ docker run -p 3306:3306 --name mysql -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs
 ```
 
 ```
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=jshx123@! -d -v /data/mysql/:/var/lib/mysql mysql --lower_case_table_names=1
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mingkai13 -d -v /data/mysql/:/var/lib/mysql mysql --lower_case_table_names=1 --default_authentication_plugin=mysql_native_password
 ```
 
 - **-p 3306:3306**：将容器的 3306 端口映射到主机的 3306 端口。
@@ -43,6 +43,8 @@ docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=jshx123@! -d -v /dat
 - **-v $PWD/data:/var/lib/mysql** ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
 
 - **-e MYSQL_ROOT_PASSWORD=123456：**初始化 root 用户的密码。
+
+- **--default_authentication_plugin=mysql_native_password：**设置默认加密规则
 
 
 

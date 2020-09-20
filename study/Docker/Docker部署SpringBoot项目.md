@@ -54,7 +54,7 @@
 
 - 运行镜像
 
-  运行镜像，输入命令 docker  run -d -name filemongo -p 10020:8088 filemongo关于运行镜像命令这里就不解释了。跑起来之后就可以在虚拟机外面通过虚拟机里Centos系统的ip来访问了
+  运行镜像，输入命令 docker  run -d --name filemongo -p 10020:8088 filemongo关于运行镜像命令这里就不解释了。跑起来之后就可以在虚拟机外面通过虚拟机里Centos系统的ip来访问了
 
   docker ps 查看镜像运行中
 

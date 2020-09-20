@@ -1,5 +1,11 @@
 
 
+## Redis Docker启动命令
+
+docker run -d --name redis -p 26379:6379 redis --requirepass "micheal13" --appendonly yes
+
+
+
 ## 一、Redis用过哪些数据结构，以及Redis底层怎么实现
 
 ### 数据结构
