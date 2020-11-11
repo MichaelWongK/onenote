@@ -12,6 +12,9 @@ docker run -d --restart=always --name=jenkins-master \
 -v $PWD:/var/jenkins_home \ 
 -v /run/docker.sock:/var/run/docker.sock \ 
 -v /usr/bin/docker:/usr/bin/docker \ 
+-v /var/local/jdk1.8.0_191/bin/java:/usr/bin/jdk1.8.0_191/java \
+-v /var/local/jdk1.8.0_191:/var/local/jdk1.8.0_191 \ 
+-v /var/local/apache-maven-3.6.0:/var/local/apache-maven-3.6.0 \ 
 --env JAVA_OPTS="-Xms256m -Xmx256m -XX:CompressedClassSpaceSize=128m -XX:MetaspaceSize=200m -XX:MaxMetaspaceSize=200m" \ 
 -u 0 \ 
 jenkins/jenkins:lts
@@ -56,7 +59,7 @@ jenkins/jenkins:lts
 docker pull jenkins:latest 这是错误的
 ```
 
-首先在docker官方仓库网页搜索jenkins的镜像。注意，要安装的是 jenkins/jenins:lts，不是jenins，后者已经被官方废弃了。
+首先在docker官方仓库网页搜 索jenkins的镜像。注意，要安装的是 jenkins/jenins:lts，不是jenins，后者已经被官方废弃了。
 应该安装如下
 
 ```shell
