@@ -219,7 +219,9 @@ mvn deploy:deploy-file -DgroupId=com.google.code.kaptcha -DartifactId=kaptcha -D
 
 这里新建了名为`third`的第三方仓库，注意要在`setting.xml`增加一个`server`节点，配置用户名和密码。同时要将`third`仓库加到`maven-public`组中，因为第十步要依赖的是`maven-public`组。将 `third`加入`maven-pulic`组后，只要依赖`maven-public`，便可取到`third`中的jar包。
 
-### 七、从nexus下载依赖
+
+
+# 七、从nexus下载依赖
 
 在`pom.xml`中增加如下仓库配置：
 
@@ -252,4 +254,4 @@ mvn deploy:deploy-file -DgroupId=com.google.code.kaptcha -DartifactId=kaptcha -D
     </pluginRepositories>
 ```
 
-###### 可以看到 上面的`url`节点填写的都是`maven-public`组的url，而`maven-releases`,`maven-snapshots`,`third`都包含在`maven-public`中，所以能取到三个仓库的内容。
+可以看到 上面的`url`节点填写的都是`maven-public`组的url，而`maven-releases`,`maven-snapshots`,`third`都包含在`maven-public`中，所以能取到三个仓库的内容。

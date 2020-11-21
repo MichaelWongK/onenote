@@ -79,6 +79,12 @@ sudo rm -rf /var/lib/docker
 sudo yum install docker-ce
 ```
 
+- 安装docker
+
+```
+yum -y install docker
+```
+
 - 启动docker
 
 ```bash
