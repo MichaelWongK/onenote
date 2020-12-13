@@ -255,7 +255,7 @@ tar -zxvf  storage.tar.gz
 ### 将文件从宿主机导入新的容器
 
 ```
-docker cp storage/ c9f9be23f50b:/data/dump/storage
+docker cp storage/ e7bf7e2d2742:/data/dump/storage
 ```
 
 ### 使用mongorestore进行数据还原
