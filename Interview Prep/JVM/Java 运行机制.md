@@ -11,7 +11,14 @@ java源文件:指存储java源码的文件。
 先来看看如下代码：
 
 ```
-//MyTest被public修饰，故存储该java源码的文件名为MyTestpublic class MyTest {  public static void main(String[] args){System.out.println("Test Java execute process.");}}//由于MyTest被public修饰了，故Class A不能用public修饰class A{}//由于MyTest被public修饰了，故Class B不能用public修饰class B{}
+//MyTest被public修饰，故存储该java源码的文件名为MyTest
+public class MyTest { 
+	public static void main(String[] args){
+		System.out.println("Test Java execute process.");
+    }
+}
+//由于MyTest被public修饰了，故Class A不能用public修饰class A{}
+//由于MyTest被public修饰了，故Class B不能用public修饰class B{}
 ```
 
 1、java源文件名就是该源文件中public类的名称
