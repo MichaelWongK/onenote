@@ -146,10 +146,11 @@ rs.status()
 
 ```shell
 use admin;
-db.createUser({ user: '1iURI', pwd: 'rootroot', roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] });
+db.auth('root','123456') // 先认证再创建用户及db
+db.createUser({ user: 'micheal.wang', pwd: 'mingkai13', roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] });
 
-use exuehui
-db.createUser({ user: '1iURI-exuehui', pwd: 'rootroot', roles: [ { role: "readWrite", db: "exuehui" } ] });
+use zxacc
+db.createUser({ user: 'micheal.wang', pwd: 'mingkai13', roles: [ { role: "readWrite", db: "zxacc" } ] });
 ```
 
 #### 7. 重新运行容器，并添加--auth
