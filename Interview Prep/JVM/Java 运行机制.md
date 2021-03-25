@@ -1,10 +1,10 @@
-## 										Java 运行机制
+# 										Java 运行机制
 
 在本篇文章中，将重点研究java源代码的执行原理，即从程序员编写JAVA源代码，到最终形成产品，在整个过程中，都经历了什么？每一步又是怎么执行的？执行原理又是什么？
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/vnOqylzBGCTgZM7VBsyv3O2na0ibggMGpWWvhoePcouuFX8LeKyjpImHG9lQSOVlLTBcfjpdaURqu4Rwia2sibAzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
-**一、编写java源程序**
+## **一、编写java源程序**
 
 java源文件:指存储java源码的文件。
 
@@ -27,7 +27,7 @@ public class MyTest {
 
 2、一个java源文件可以包含多个类，但只允许一个类为public
 
-**二、编译java源代码**
+## **二、编译java源代码**
 
 当java源程序编码结束后，就需要编译器编译。
 
@@ -57,7 +57,7 @@ Tip:当javac.exe编译java源代码时，java源代码有几个类，就会编�
 
 Tips：关注微信公众号：Java后端，每日获取技术博文推送。
 
-**三、执行java源文件**
+## **三、执行java源文件**
 
 执行java源文件，用java.exe执行即可
 
@@ -69,7 +69,7 @@ Tips：关注微信公众号：Java后端，每日获取技术博文推送。
 
 如上总结，已经抽象化了在JVM中的执行。接下来，我们将分析字节码文件（.class文件）如何在虚拟机中一步一执行的。
 
-**四、JVM如何执行字节码文件**
+## **四、JVM如何执行字节码文件**
 
 1、装载字节码文件
 
