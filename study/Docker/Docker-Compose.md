@@ -50,8 +50,6 @@ application.name
 registry.port
 ```
 
-
-
 ## 配置 docker-compose.yml 文件(注意: 冒号 -号后必须空格, 各级别必须对其)
 
 ```bash
@@ -85,22 +83,3 @@ dns: # dns 的配置
 
 - 8.8.8.8
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

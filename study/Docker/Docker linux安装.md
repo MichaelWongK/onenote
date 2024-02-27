@@ -82,6 +82,10 @@ sudo yum install docker-ce
 - 安装docker
 
 ```
+
+sudo yum remove -y docker-ce-cli.x86_64 docker-client.x86_64 
+
+
 yum -y install docker
 ```
 
@@ -123,12 +127,10 @@ sudo systemctl restart docker
 ## 拉取镜像
 
 - 镜像拉取地址：
-
+  
   dockerhub 
-
+  
   ![img](https:////upload-images.jianshu.io/upload_images/9494436-2a2035d70223703e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
-
-
 
 ```objectivec
 # 下载镜像：docker pull <镜像名:tag>    如：下载centos镜像
@@ -163,36 +165,34 @@ docer -p hostPort:containerPort # 映射本机的指定端口到容器的指定�
 docker -v /home/data:/opt/data # 这里/home/data 指的是宿主机的目录地址，后者则是容器的目录地址
 ```
 
-
-
 ## 导出导入镜像
 
 此处以mysql为例（docker安装mysql）
 
 * 找一台已经安装mysql的linux服务 
-
+  
   **执行命令：docker images**
 
 <img src="..\..\imageFiles\image-20200730144620164.png" alt="image-20200730144620164" style="zoom: 70%;" />
 
-​		**执行导出命令**
+​        **执行导出命令**
 
 ```
-	// docker save -o 导出得镜像名称 .gz docker镜像名称
-	// 导出得镜像名称 docker镜像名称中间有空格，不能有点比如：mysql5.7.gz）
-	docker save -o mysql-temp.gz mysql
+    // docker save -o 导出得镜像名称 .gz docker镜像名称
+    // 导出得镜像名称 docker镜像名称中间有空格，不能有点比如：mysql5.7.gz）
+    docker save -o mysql-temp.gz mysql
 ```
 
-​		**导出完成后文件会生成在根目录下或者root下**
+​        **导出完成后文件会生成在根目录下或者root下**
 
 <img src="..\..\imageFiles\image-20200730144933735.png" alt="image-20200730144933735" style="zoom:80%;" />
 
-​		**将生成的mysql-temp.gz 文件导入需要安装的linux**
+​        **将生成的mysql-temp.gz 文件导入需要安装的linux**
 
 - 执行导入命令 进入mysql-temp.gz所在目录执行命令 docker load -i mysql-temp.gz
-
+  
   **导入后执行 docker images 查看镜像，导入成功**
-
+  
   <img src="..\..\imageFiles\image-20200730145408718.png" alt="image-20200730145408718" style="zoom:80%;" />
 
 > 启动请参考[Docker安装mysql](Docker安装mysql)
@@ -211,40 +211,3 @@ docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v porta
 访问你的 IP:9000 即可进入容器管理页面。
 
 ![img](..\..\imageFiles\aaaaaaaaaa.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

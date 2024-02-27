@@ -30,7 +30,7 @@ docker run --name mongodb-server -v /data/mongodb0:/data/db -p 27017:27017 -d �
 docker exec -it mongodb-server mongo admin
 ```
 
-<img src="D:/workspace/git/onenote/imageFiles/image-20200730204530909.png" alt="image-20200730204530909" style="zoom: 75%;" />
+<img src="D:/workspace/github/onenote/imageFiles/image-20200730204530909.png" alt="image-20200730204530909" style="zoom: 75%;" />
 
 - 添加用户命令
 
@@ -42,7 +42,7 @@ db.createUser({ user: 'micheal.wang', pwd: 'mingkai13', roles: [{role: "readWrit
 // 需要切换对应db再创建user
 ```
 
-<img src="D:/workspace/git/onenote/imageFiles/image-20200730204642242.png" alt="image-20200730204642242" style="zoom: 55%;" />
+<img src="D:/workspace/github/onenote/imageFiles/image-20200730204642242.png" alt="image-20200730204642242" style="zoom: 55%;" />
 
 ### MongoDB用户权限
 
@@ -190,25 +190,17 @@ docker run --name mongodb-server0 \
 --replSet exuehui-mongo-set
 ```
 
-
-
 ## MongoDB使用命令创建用户权错误分析
 
 ![img](..\..\imageFiles\20181218100637545.png)
 
 **解决方案：先使用超级管理员登录**
 
-  									![20181218100438429](../../imageFiles/20181218100438429.png)
+                                      ![20181218100438429](../../imageFiles/20181218100438429.png)
 
 **再进行其他数据库用户创建的创建**
 
 ![img](..\..\imageFiles\20181218100539655.png)
-
-
-
-
-
-
 
 ## MongoDB数据备份及还原
 
@@ -226,14 +218,14 @@ docker exec -it mongodb-server /bin/bash
 mongodump -h 127.0.0.1 --port 27017 -u micheal.wang -p mingkai13 -d storage -o /data
 ```
 
-| 参数   | 作用               |
-| ------ | ------------------ |
-| -h     | host               |
-| --port | 端口               |
-| -d     | 指定数据库         |
+| 参数     | 作用        |
+| ------ | --------- |
+| -h     | host      |
+| --port | 端口        |
+| -d     | 指定数据库     |
 | -o     | 指定备份到具体目录 |
-| -u     | 用户名             |
-| -p     | 密码               |
+| -u     | 用户名       |
+| -p     | 密码        |
 
 ### 压缩备份文件夹
 
@@ -264,6 +256,3 @@ docker cp storage/ e7bf7e2d2742:/data/dump/storage
 ```
 mongorestore -h 127.0.0.1:27017 -u micheal.wang -p mingkai13 -d storage /data/dump/storage/
 ```
-
-
-

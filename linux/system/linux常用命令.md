@@ -20,45 +20,45 @@
 ## 查看系统信息uname
 
 - 全部信息: uname -a
-
+  
   - `Linux dudu 3.10.0-514.26.2.el7.x86_64 #1 SMP Tue Jul 4 15:04:05 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux`
 
 - 硬件平台: uname -i
-
+  
   - `x86_64`
 
 - 机器硬件（CPU）名: uname -m
-
+  
   - `x86_64`
 
 - 节点名称: uname -n
-
+  
   - `dudu`
 
 - 操作系统: uname -o
-
+  
   - `GNU/Linux`
 
 - 系统处理器的体系结构: uname -p
-
+  
   - `x86_64`
 
 - 操作系统的发行版号 uname -r
-
+  
   - `3.10.0-514.26.2.el7.x86_64`
 
 - 系统名: uname -s
-
+  
   - `Linux`
 
 - 内核版本: uname -v
-
+  
   - `#1 SMP Tue Jul 4 15:04:05 UTC 2017`
 
 - 内核版本详细信息（更直观）: lsb_release -a
-
+  
   > LSB(Linux Standard Base) 此命令适用于所有的Linux发行版本
-
+  
   ```
   LSB Version:    :core-4.1-amd64:core-4.1-noarch
   Distributor ID: CentOS
@@ -185,11 +185,11 @@
 > Linux shell ftp 工具，推荐使用 SecureCRT SecureFX
 
 - 批量导入服务器
-
+  
   - 先决文件：https://www.vandyke.com/support/tips/importsessions.html
-
+  
   - 创建一个.csv文件,写上对应服务器信息,如下
-
+    
     ```
     protocol,username,folder,session_name,hostname
     SSH2,root,hello,pro-hello,127.0.0.1
@@ -267,11 +267,9 @@
 - /run：
   - 是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。
 
-
-
 ## linux服务器重启指令
 
-###  Linux 的五个重启命令
+### Linux 的五个重启命令
 
 　　1、shutdown
 
@@ -291,7 +289,7 @@
 
 　　在linux下一些常用的关机/重启命令有shutdown、halt、reboot、及init，它们都可以达到重启系统的目的，但每个命令的内部工作过程是不同的，通过本文的介绍，希望你可以更加灵活的运用各种关机命令。
 
-#### 　　**1.shutdown**
+#### **1.shutdown**
 
 　　shutdown命令安全地将系统关机。 有些用户会使用直接断掉电源的方式来关闭linux，这是十分危险的。因为linux与windows不同，其后台运行着许多进程，所以强制关机可能会导致进程的数据丢失﹐使系统处于不稳定的状态﹐甚至在有的系统中会损坏硬件设备。而在系统关机前使用shutdown命令﹐系统管理员会通知所有登录的用户系统将要关闭。并且login指令会被冻结﹐即新的用户不能再登录。直接关机或者延迟一定的时间才关机都是可能的﹐还可能重启。这是由所有进程〔process〕都会收到系统所送达的信号〔signal〕
 
@@ -323,7 +321,7 @@
 
 　　[-time] 设定关机〔shutdown〕前的时间。
 
-#### 　　**2.halt**----最简单的关机命令
+#### **2.halt**----最简单的关机命令
 
 　　其实halt就是调用shutdown -h。halt执行时﹐杀死应用进程﹐执行sync系统调用﹐文件系统写操作完成后就会停止内核。
 
@@ -343,12 +341,10 @@
 
 　　[-p] 该选项为缺省选项。就是关机时调用poweroff。
 
-#### 　　**3.reboot**
+#### **3.reboot**
 
 　　reboot的工作过程差不多跟halt一样﹐不过它是引发主机重启﹐而halt是关机。它 的参数与halt相差不多。
 
-#### 　　**4.init**
-
- 
+#### **4.init**
 
 　　init是所有进程的祖先﹐它的进程号始终为1﹐所以发送TERM信号给init会终止所有的 用户进程﹑守护进程等。shutdown 就是使用这种机制。init定义了8个运行级别(runlevel)， init 0为关机﹐init 1为重启。关于init可以长篇大论﹐这里就不再叙述。另外还有telinit命令可以改变init的运行级别﹐比如﹐telinit -iS可使系统进入单用户模式﹐ 并且得不到使用shutdown时的信息和等待时间。

@@ -6,7 +6,7 @@
  docker search mysql
 ```
 
-![image-20200730110331358](D:/workspace/git/onenote/imageFiles/image-20200730110331358.png)
+![image-20200730110331358](D:/workspace/github/onenote/imageFiles/image-20200730110331358.png)
 
 > OFFICIAL ok 代表官方镜像
 
@@ -52,7 +52,7 @@ docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mingkai13 -d -v /dat
 
 ​	此时，用navicat for mysql连接mysql发现报错：Client does not support authentication protocol requested by server。。。
 
-![image-20200730115313591](D:/workspace/git/onenote/imageFiles/image-20200730115313591.png)
+![image-20200730115313591](D:/workspace/github/onenote/imageFiles/image-20200730115313591.png)
 
 
 

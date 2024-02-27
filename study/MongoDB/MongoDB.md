@@ -30,11 +30,7 @@ BSON（）是一种类json的一种二进制形式的存储格式，简称Binary
 
 ### 6 MongoDB和关系型数据库术语对比图
 
-
-
 ![img](https://pic2.zhimg.com/80/v2-4cb3078a802ff118ae39b901e101e754_1440w.jpg)
-
-
 
 ### 7.什么是非关系型数据库
 
